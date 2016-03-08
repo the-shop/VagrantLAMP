@@ -20,6 +20,27 @@ Installed on the box:
   2. Clone this repository to your machine 
   3. From project root, run `vagrant up`
   5. Update your [hosts file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system) as described below
+  6. Add your projects to `Sites` directory
 
-### Vhost setup
-TODO
+## Hosts file
+Append the following to your hosts file in order to load 3 examples in your browser
+```
+192.168.33.10   example1.local
+192.168.33.10   example2.pub
+192.168.33.10   example3.public_html
+```
+
+## Vhosts mapping through domain
+This box utilizes [Dynamically Configured Mass Virtual Hosting by Apache](https://httpd.apache.org/docs/2.4/vhosts/mass.html).
+
+Current box setup recognizes hostname and based of TLD decides where's the project root.
+
+Domain without TLD (in examples above that would be `example1`, `example2` and `example3`) is the project directory name 
+and everything you want to be loaded for each of the domains must live in directory `Sites/<PROJECT_DIRECTORY>/`.   
+
+When `.local` is recognized, `Sites/<PROJECT_DIRECTORY>/` is the recognized as project root, and everything else including 
+`.pub` and `.public_html` presumes that project root is a subdirectory of `<PROJECT_ROOT>` named as TLD provided. Reference 
+to `Sites/example2/` and `Sites/example2/` to get the idea.
+
+## MariaDB
+Remote access to database is possible using user `dbuser` with password `toor`.
