@@ -21,6 +21,8 @@ Installed on the box:
   3. From project root, run `vagrant up`
   5. Update your [hosts file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system) as described below
   6. Add your projects to `Sites` directory
+  
+Note: make sure your projects directory are lowercase because browsers will lowercase your domain, same goes for hosts file records.
 
 ## Hosts file
 Append the following to your hosts file in order to load 3 examples in your browser
