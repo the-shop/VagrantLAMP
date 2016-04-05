@@ -10,7 +10,8 @@ Vagrant.configure(2) do |config|
 
   config.vm.network "private_network", ip: "192.168.33.10"
 
-  config.vm.synced_folder "./Sites", "/var/www/BoxData/GenericLAMP"
+  config.vm.synced_folder "./Sites", "/var/www/BoxData/GenericLAMP",
+    :owner=> 'vagrant', :group=>'www-data', :mount_options => ['dmode=775', 'fmode=775']
 
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "1024"
