@@ -11,9 +11,12 @@ You should [read more on Vagrant](https://docs.vagrantup.com/v2/why-vagrant/inde
 before you proceed.
 
 Installed on the box:
-  * PHP 5.6.18
-  * Apache 2.4.18
-  * MariaDB 10.1.11
+  * PHP 7.1
+  * Apache 2.4
+  * MariaDB 10.0
+  * MongoDB 2.6
+  * Redis 3.2
+  * Composer
 
 ## Setup
   1. Install Vagrant and VirtualBox
@@ -22,7 +25,9 @@ Installed on the box:
   5. Update your [hosts file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system) as described below
   6. Add your projects to `Sites` directory
   
-Note: make sure your projects directory are lowercase because browsers will lowercase your domain, same goes for hosts file records.
+Notes: 
+ - Make sure your projects directory are lowercase because browsers will lowercase your domain, same goes for hosts file records.
+ - User `ubuntu` has password `ubuntu`
 
 ## Hosts file
 Append the following to your hosts file in order to load 3 examples in your browser
