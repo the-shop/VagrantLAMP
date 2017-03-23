@@ -1,6 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+Vagrant.require_version ">= 1.9.0"
+
 Vagrant.configure(2) do |config|
   config.vm.box = "the-shop/GenericLAMP"
 
@@ -12,6 +14,7 @@ Vagrant.configure(2) do |config|
 
   config.ssh.username = "ubuntu"
   config.ssh.password = "ubuntu"
+  config.ssh.insert_key = false
 
   config.vm.synced_folder "./Sites", "/var/www",
     :owner=> 'ubuntu', :group=>'www-data', :mount_options => ['dmode=775', 'fmode=775']

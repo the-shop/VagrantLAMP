@@ -4,11 +4,12 @@ LAMP box with mass vhost setup
 ## About the box 
 
 This repository is currently set up for local development and it utilizes [Vagrant](https://www.vagrantup.com/) with 
-[VirtualBox](https://www.virtualbox.org/) provider to emulate production environment on Windows, OSX and Linux (note 
-that it has been tested just on Linux and OSX).
+ [VirtualBox](https://www.virtualbox.org/) provider to emulate production environment on Windows, OSX and Linux (note 
+ that it has been tested just on Linux and OSX). If you have preinstalled Vagrant or VirtualBox, make sure you update
+ to latest versions
 
 You should [read more on Vagrant](https://docs.vagrantup.com/v2/why-vagrant/index.html) if you're not familiar with it
-before you proceed.
+ before you proceed.
 
 Installed on the box:
   * PHP 7.1
@@ -28,6 +29,7 @@ Installed on the box:
 Notes: 
  - Make sure your projects directory are lowercase because browsers will lowercase your domain, same goes for hosts file records.
  - User `ubuntu` has password `ubuntu`
+ - Xdebug is set on port `9000`
 
 ## Hosts file
 Append the following to your hosts file in order to load 3 examples in your browser
@@ -43,11 +45,11 @@ This box utilizes [Dynamically Configured Mass Virtual Hosting by Apache](https:
 Current box setup recognizes hostname and based of TLD decides where's the project root.
 
 Domain without TLD (in examples above that would be `example1`, `example2` and `example3`) is the project directory name 
-and everything you want to be loaded for each of the domains must live in directory `Sites/<PROJECT_DIRECTORY>/`.   
+ and everything you want to be loaded for each of the domains must live in directory `Sites/<PROJECT_DIRECTORY>/`.   
 
 When `.local` is recognized, `Sites/<PROJECT_DIRECTORY>/` is the recognized as project root, and everything else including 
-`.pub` and `.public_html` presumes that project root is a subdirectory of `<PROJECT_ROOT>` named as TLD provided. Reference 
-to `Sites/example2/` and `Sites/example2/` to get the idea.
+ `.pub` and `.public_html` presumes that project root is a subdirectory of `<PROJECT_ROOT>` named as TLD provided. Reference 
+ to `Sites/example2/` and `Sites/example2/` to get the idea.
 
 ## MariaDB
-Remote access to database is possible using user `dbuser` with password `toor`.
+Remote access to database is possible using user `root` with password `toor`.
