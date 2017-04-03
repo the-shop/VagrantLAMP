@@ -13,8 +13,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "private_network", ip: "192.168.33.10"
 
   config.ssh.username = "ubuntu"
-  config.ssh.password = "ubuntu"
-  config.ssh.insert_key = false
+  config.ssh.insert_key = true
 
   config.vm.synced_folder "./Sites", "/var/www",
     :owner=> 'ubuntu', :group=>'www-data', :mount_options => ['dmode=775', 'fmode=775']
